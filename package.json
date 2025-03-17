@@ -1,0 +1,32 @@
+{
+  "name": "dotenv-dev",
+  "version": "0.1.0",
+  "description": "dotenv with a prod-protecting failsafe",
+  "type": "module",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "fmt": "prettier --write index.js",
+    "test": "node index.js DATABASE_URL -i localhost -f test.env -- ./test.sh",
+    "test:bad": "node index.js DATABASE_URL -x localhost -f test.env -- ./test.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carderne/dotenv-dev.git"
+  },
+  "author": "Chris Arderne <chris@rdrn.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carderne/dotenv-dev/issues"
+  },
+  "homepage": "https://github.com/carderne/dotenv-dev",
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "minimist": "^1.2.8"
+  }
+}
